@@ -321,7 +321,8 @@ img { max-width: 100%; display: block; }
 .about-img-wrap { flex-shrink: 0; }
 
 .about-photo {
-  width: 280px; height: 280px;
+  width: clamp(180px, 55vw, 280px);
+  height: clamp(180px, 55vw, 280px);
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--pink-light);
@@ -330,7 +331,8 @@ img { max-width: 100%; display: block; }
 }
 
 .about-photo-placeholder {
-  width: 280px; height: 280px;
+  width: clamp(180px, 55vw, 280px);
+  height: clamp(180px, 55vw, 280px);
   border-radius: 50%;
   background: linear-gradient(135deg, var(--pink-pale), var(--pink-light));
   display: flex;
@@ -474,7 +476,7 @@ img { max-width: 100%; display: block; }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
 }
 
@@ -740,16 +742,35 @@ footer {
   .about-cards { margin-top: 24px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  /* Show hamburger on tablets too */
+  .hamburger { display: flex; }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--pink-light); padding: 20px 6%; gap: 14px; z-index: 998; }
+  .nav-links.open { display: flex; }
 }
 
 @media (max-width: 600px) {
-  .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--pink-light); padding: 20px 6%; gap: 14px; }
-  .nav-links.open { display: flex; }
-  .hamburger { display: flex; }
+  /* Sections padding */
+  #about, #hobbies, #favorites, #contact { padding: 60px 5%; }
+  #hero { padding: 90px 5% 60px; }
+  /* Hero text */
+  .hero-tagline { font-size: 1.15rem; }
+  .hero-sub { font-size: 1rem; }
   .hero-visual { width: 260px; height: 260px; }
   .avatar-ring { width: 190px; height: 190px; top: 35px; left: 35px; }
   .avatar-inner { width: 158px; height: 158px; font-size: 3rem; }
+  /* About photo */
+  .about-photo, .about-photo-placeholder { width: 190px; height: 190px; }
+  /* Cards & grids */
+  .projects-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+  .about-card { padding: 16px 12px; }
+  /* Contact */
+  .contact-simple { width: 100%; align-items: stretch; }
+  .contact-item { font-size: .875rem; }
   .form-row { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; }
   .contact-form { padding: 24px; }
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; }
+  /* Typography */
+  .section-title { font-size: 1.6rem; }
 }
