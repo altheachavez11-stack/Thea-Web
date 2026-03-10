@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Althea | Personal Page</title>
+  <link rel="stylesheet" href="a.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-brand"&lt;/&gt;/div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+      <li><a href="#favorites" class="nav-link">Favorites</a></li>
+      <li><a href="#contact" class="nav-btn">Contact Me</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-tagline">Welcome! Glad you stopped by. 🌸</p>
+      <p class="hero-sub">This is my little corner of the internet — feel free to look around and get to know me a little better!</p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-container">
+      <div class="about-img-wrap">
+        <img src="IMG_20250515_174711.jpg" alt="Althea's profile photo" class="about-photo" />
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">A little bit about <span class="accent">me</span></h2>
+        <p>Hi there, I'm <strong>Althea</strong>. BSCS 3rd Year student at Palawan State University-Narra Campus.</p>
+        <p>I enjoy learning new things and exploring my interests at my own pace.</p>
+        <button class="section-label accordion-toggle" aria-expanded="false" data-target="hobbies-panel" style="margin-top:24px;">Hobbies <i class="fa-solid fa-chevron-down accord-icon"></i></button>
+        <div class="accordion-body" id="hobbies-panel">
+          <div class="about-cards">
+            <div class="about-card">
+              <i class="fa-solid fa-film"></i>
+              <h4>Movies &amp; Series</h4>
+              <p>I love getting lost in a good story, whether it's a film or a long binge-worthy series.</p>
+            </div>
+            <div class="about-card">
+              <i class="fa-solid fa-headphones"></i>
+              <h4>Listening to Music</h4>
+              <p>Music is always on — it keeps me company and sets the mood for everything I do.</p>
+            </div>
+            <div class="about-card">
+              <i class="fa-solid fa-book-open"></i>
+              <h4>Journaling</h4>
+              <p>Writing down my thoughts helps me reflect, unwind, and stay grounded.</p>
+            </div>
+          </div>
+        </div>
+        <button class="section-label accordion-toggle" aria-expanded="false" data-target="fav-panel" style="margin-top:16px;">Favorite Websites <i class="fa-solid fa-chevron-down accord-icon"></i></button>
+        <div class="accordion-body" id="fav-panel">
+          <div class="about-cards">
+            <div class="about-card">
+              <i class="fa-brands fa-spotify" style="color:#1DB954;"></i>
+              <h4>Spotify</h4>
+              <p>My go-to for music, playlists, and podcasts — basically always open.</p>
+            </div>
+            <div class="about-card">
+              <i class="fa-brands fa-medium"></i>
+              <h4>Medium</h4>
+              <p>Where I read articles and essays on topics I'm curious about.</p>
+            </div>
+            <div class="about-card">
+              <i class="fa-solid fa-ticket"></i>
+              <h4>Letterboxd</h4>
+              <p>I log and discover movies here — a diary for my film-watching life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOBBIES ===== -->
+  <section id="hobbies">
+    <div class="section-inner">
+      <span class="section-label">What I Love</span>
+      <h2 class="section-title center">My <span class="accent">Hobbies</span></h2>
+      <div class="about-cards">
+        <div class="about-card">
+          <i class="fa-solid fa-film"></i>
+          <h4>Movies &amp; Series</h4>
+          <p>I love getting lost in a good story, whether it's a film or a long binge-worthy series.</p>
+        </div>
+        <div class="about-card">
+          <i class="fa-solid fa-headphones"></i>
+          <h4>Listening to Music</h4>
+          <p>Music is always on — it keeps me company and sets the mood for everything I do.</p>
+        </div>
+        <div class="about-card">
+          <i class="fa-solid fa-book-open"></i>
+          <h4>Journaling</h4>
+          <p>Writing down my thoughts helps me reflect, unwind, and stay grounded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAVORITES ===== -->
+  <section id="favorites">
+    <div class="section-inner">
+      <span class="section-label">Favorites</span>
+      <h2 class="section-title center">Favorite <span class="accent">Websites</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-img" style="background: linear-gradient(135deg,#1DB954,#191414)">
+            <i class="fa-brands fa-spotify"></i>
+          </div>
+          <div class="project-info">
+            <h3>Spotify</h3>
+            <p>My go-to for music, playlists, and podcasts — basically always open.</p>
+            <a href="https://spotify.com" class="project-link" target="_blank">Visit <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img" style="background: linear-gradient(135deg,#333,#888)">
+            <i class="fa-brands fa-medium"></i>
+          </div>
+          <div class="project-info">
+            <h3>Medium</h3>
+            <p>Where I read articles and essays on topics I'm curious about.</p>
+            <a href="https://medium.com/@insideD4walls" class="project-link" target="_blank">Visit <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img" style="background: linear-gradient(135deg,#2C3440,#445566)">
+            <i class="fa-solid fa-ticket"></i>
+          </div>
+          <div class="project-info">
+            <h3>Letterboxd</h3>
+            <p>I log and discover movies here — a diary for my film-watching life.</p>
+            <a href="https://letterboxd.com" class="project-link" target="_blank">Visit <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title center">Get In <span class="accent">Touch</span></h2>
+      <div class="contact-simple">
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>altheachavez@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+63 912 345 6789</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Philippines</span>
+        </div>
+        <div class="contact-socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">Althea</span>
+        <p>Aspiring tech psychologist interested in understanding how digital platforms influence people's behavior and well-being.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#favorites">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-connect">
+        <h4>Connect</h4>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Althea. All rights reserved.</p>
+  </footer>
+
+  <script src="t.js"></script>
+</body>
+</html>
