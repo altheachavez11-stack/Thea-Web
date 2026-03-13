@@ -12,11 +12,12 @@
 
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar">
-    <div class="nav-brand"&lt;/&gt;/div>
+    <div class="nav-brand"&lt;><a href="#" class="">Althea</a></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
       <li><a href="#favorites" class="nav-link">Favorites</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#contact" class="nav-btn">Contact Me</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -43,45 +44,9 @@
         <h2 class="section-title">A little bit about <span class="accent">me</span></h2>
         <p>Hi there, I'm <strong>Althea</strong>. BSCS 3rd Year student at Palawan State University-Narra Campus.</p>
         <p>I enjoy learning new things and exploring my interests at my own pace.</p>
-        <button class="section-label accordion-toggle" aria-expanded="false" data-target="hobbies-panel" style="margin-top:24px;">Hobbies <i class="fa-solid fa-chevron-down accord-icon"></i></button>
-        <div class="accordion-body" id="hobbies-panel">
-          <div class="about-cards">
-            <div class="about-card">
-              <i class="fa-solid fa-film"></i>
-              <h4>Movies &amp; Series</h4>
-              <p>I love getting lost in a good story, whether it's a film or a long binge-worthy series.</p>
-            </div>
-            <div class="about-card">
-              <i class="fa-solid fa-headphones"></i>
-              <h4>Listening to Music</h4>
-              <p>Music is always on — it keeps me company and sets the mood for everything I do.</p>
-            </div>
-            <div class="about-card">
-              <i class="fa-solid fa-book-open"></i>
-              <h4>Journaling</h4>
-              <p>Writing down my thoughts helps me reflect, unwind, and stay grounded.</p>
-            </div>
-          </div>
-        </div>
-        <button class="section-label accordion-toggle" aria-expanded="false" data-target="fav-panel" style="margin-top:16px;">Favorite Websites <i class="fa-solid fa-chevron-down accord-icon"></i></button>
-        <div class="accordion-body" id="fav-panel">
-          <div class="about-cards">
-            <div class="about-card">
-              <i class="fa-brands fa-spotify" style="color:#1DB954;"></i>
-              <h4>Spotify</h4>
-              <p>My go-to for music, playlists, and podcasts — basically always open.</p>
-            </div>
-            <div class="about-card">
-              <i class="fa-brands fa-medium"></i>
-              <h4>Medium</h4>
-              <p>Where I read articles and essays on topics I'm curious about.</p>
-            </div>
-            <div class="about-card">
-              <i class="fa-solid fa-ticket"></i>
-              <h4>Letterboxd</h4>
-              <p>I log and discover movies here — a diary for my film-watching life.</p>
-            </div>
-          </div>
+        <div class="about-btns">
+          <a href="#projects" class="btn-primary">View My Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
         </div>
       </div>
     </div>
@@ -156,6 +121,89 @@
     </div>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-inner">
+      <span class="section-label">Adobe Photoshop</span>
+      <h2 class="section-title center">My <span class="accent">Projects</span></h2>
+      <p class="section-desc">A collection of my graphic design activities and outputs.</p>
+      <div class="gallery-grid">
+
+        <div class="gallery-card"
+          data-img="Activity 1 - Chavez, A.png"
+          data-title="Activity 1: Shapes"
+          data-desc="Basic shapes and design fundamentals in Adobe Photoshop.">
+          <div class="gallery-thumb">
+            <img src="Activity 1 - Chavez, A.png" alt="Activity 1: Shapes" />
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-info">
+            <h3>Activity 1: Shapes</h3>
+          </div>
+        </div>
+
+        <div class="gallery-card"
+          data-img="Activity 2/Artboard 1.png"
+          data-img2="Activity 2/Artboard 2.png"
+          data-title="Brochure"
+          data-desc="a digital platform that helps barangay leaders manage community services, records, and communication efficiently through modern technology.">
+          <div class="gallery-thumb">
+            <img src="Activity 2/Artboard 1.png" alt="Brochure" />
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-info">
+            <h3>BLADE: Barangay Leaders Digital Empowerment</h3>
+            <span class="gallery-tag">Brochure</span>
+          </div>
+        </div>
+
+        <div class="gallery-card"
+          data-img="Activity 2/Chavez, Althea - Act 2 (mask effect).png"
+          data-img2="Activity 2/Chavez, Althea - Act 2 (text around image).png"
+          data-title="Activity 2: Mask Effect and Text Around Image"
+          data-desc="Combined Activity 2 output showing both the mask effect and text-around-image techniques.">
+          <div class="gallery-thumb">
+            <img src="Activity 2/Chavez, Althea - Act 2 (mask effect).png" alt="Activity 2: Mask Effect and Text Around Image" />
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-info">
+            <h3>Activity 2: Mask Effect and Text Around Image</h3>
+            <span class="gallery-tag">2 outputs</span>
+          </div>
+        </div>
+
+        <div class="gallery-card"
+          data-img="Act 3 - Chavez, A.png"
+          data-title="Activity 3: Selection Tools"
+          data-desc="Using selection tools to create compositions in Adobe Photoshop.">
+          <div class="gallery-thumb">
+            <img src="Act 3 - Chavez, A.png" alt="Activity 3: Selection Tools" />
+            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          </div>
+          <div class="gallery-info">
+            <h3>Activity 3: Selection Tools</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close viewer"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <div class="lightbox-images">
+        <img src="" alt="" id="lightboxImg" />
+        <img src="" alt="" id="lightboxImg2" hidden />
+      </div>
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== CONTACT ===== -->
   <section id="contact">
     <div class="section-inner contact-inner">
@@ -195,15 +243,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#hobbies">Hobbies</a></li>
           <li><a href="#favorites">Favorites</a></li>
+          <li><a href="#projects">Projects</a></li>
         </ul>
-      </div>
-      <div class="footer-connect">
-        <h4>Connect</h4>
-        <div class="footer-socials">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#"><i class="fa-solid fa-envelope"></i></a>
-        </div>
       </div>
     </div>
     <p class="footer-copy">&copy; 2026 Althea. All rights reserved.</p>
