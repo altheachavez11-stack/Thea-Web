@@ -19,7 +19,14 @@
   --transition: .3s cubic-bezier(.4,0,.2,1);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+section[id] {
+  scroll-margin-top: 82px;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -348,6 +355,13 @@ img { max-width: 100%; display: block; }
 .about-text p { color: var(--muted); margin-bottom: 16px; }
 .about-text strong { color: var(--dark); }
 
+.about-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
 .about-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -401,6 +415,16 @@ img { max-width: 100%; display: block; }
 }
 #skills .section-title { color: var(--white); }
 #skills .section-desc { color: rgba(255,255,255,.6); }
+
+#hobbies {
+  padding: 84px 6%;
+  background: var(--white);
+}
+
+#favorites {
+  padding: 84px 6%;
+  background: var(--white);
+}
 
 .section-inner {
   max-width: 1100px;
@@ -470,7 +494,7 @@ img { max-width: 100%; display: block; }
    PROJECTS
 ============================= */
 #projects {
-  padding: 100px 6%;
+  padding: 84px 6%;
   background: var(--section-alt);
 }
 
@@ -719,6 +743,153 @@ footer {
 }
 
 /* ============================
+   GALLERY (PROJECTS SECTION)
+============================= */
+#projects {
+  padding: 84px 6%;
+  background: var(--white);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.gallery-card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,.07);
+  border: 1px solid var(--pink-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+.gallery-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(232,99,122,.18); }
+
+.gallery-thumb {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.gallery-card:hover .gallery-thumb img { transform: scale(1.06); }
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(232,99,122,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery-card:hover .gallery-overlay { opacity: 1; }
+
+.gallery-info {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.gallery-info h3 { font-size: 1rem; font-weight: 700; color: var(--dark); }
+
+.gallery-tag {
+  background: var(--pink-pale);
+  color: var(--pink);
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* ============================
+   LIGHTBOX
+============================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.88);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: var(--white);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  z-index: 2001;
+}
+.lightbox-close:hover { background: var(--pink); }
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transform: scale(.95);
+  transition: transform .3s ease;
+}
+.lightbox.open .lightbox-content { transform: scale(1); }
+
+.lightbox-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: min(1100px, 90vw);
+}
+
+.lightbox.show-two .lightbox-images {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lightbox-images img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+.lightbox-caption { text-align: center; color: var(--white); }
+.lightbox-caption h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+.lightbox-caption p  { font-size: .875rem; color: rgba(255,255,255,.7); }
+
+/* ============================
    SCROLL REVEAL ANIMATION
 ============================= */
 .reveal {
@@ -739,9 +910,12 @@ footer {
   .hero-btns { justify-content: center; }
   .hero-sub { margin: 0 auto 36px; }
   .section-container { flex-direction: column; align-items: center; text-align: center; }
+  .about-text { width: 100%; }
+  .about-btns { justify-content: center; }
   .about-cards { margin-top: 24px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .lightbox.show-two .lightbox-images { grid-template-columns: 1fr; }
   /* Show hamburger on tablets too */
   .hamburger { display: flex; }
   .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--pink-light); padding: 20px 6%; gap: 14px; z-index: 998; }
@@ -749,8 +923,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+  html { scroll-padding-top: 78px; }
+  section[id] { scroll-margin-top: 78px; }
   /* Sections padding */
-  #about, #hobbies, #favorites, #contact { padding: 60px 5%; }
+  #about, #hobbies, #favorites, #projects, #contact { padding: 60px 5%; }
   #hero { padding: 90px 5% 60px; }
   /* Hero text */
   .hero-tagline { font-size: 1.15rem; }
@@ -762,6 +938,7 @@ footer {
   .about-photo, .about-photo-placeholder { width: 190px; height: 190px; }
   /* Cards & grids */
   .projects-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
   .about-cards { grid-template-columns: 1fr; }
   .about-card { padding: 16px 12px; }
   /* Contact */

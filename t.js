@@ -1,3 +1,47 @@
+/* ===== LIGHTBOX ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxImg2 = document.getElementById('lightboxImg2');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxDesc = document.getElementById('lightboxDesc');
+const lightboxClose = document.getElementById('lightboxClose');
+
+document.querySelectorAll('.gallery-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const secondImg = card.dataset.img2;
+
+    lightboxImg.src = card.dataset.img;
+    lightboxImg.alt = card.dataset.title;
+
+    if (secondImg) {
+      lightboxImg2.src = secondImg;
+      lightboxImg2.alt = `${card.dataset.title} (2)`;
+      lightboxImg2.hidden = false;
+      lightbox.classList.add('show-two');
+    } else {
+      lightboxImg2.src = '';
+      lightboxImg2.alt = '';
+      lightboxImg2.hidden = true;
+      lightbox.classList.remove('show-two');
+    }
+
+    lightboxTitle.textContent = card.dataset.title;
+    lightboxDesc.textContent = card.dataset.desc;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightbox.classList.remove('show-two');
+  document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
 /* ===== NAVBAR SCROLL ===== */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
