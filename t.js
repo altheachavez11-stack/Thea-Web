@@ -2,6 +2,7 @@
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxImg2 = document.getElementById('lightboxImg2');
+const lightboxImg3 = document.getElementById('lightboxImg3');
 const lightboxTitle = document.getElementById('lightboxTitle');
 const lightboxDesc = document.getElementById('lightboxDesc');
 const lightboxClose = document.getElementById('lightboxClose');
@@ -9,9 +10,12 @@ const lightboxClose = document.getElementById('lightboxClose');
 document.querySelectorAll('.gallery-card').forEach(card => {
   card.addEventListener('click', () => {
     const secondImg = card.dataset.img2;
+    const thirdImg = card.dataset.img3;
 
     lightboxImg.src = card.dataset.img;
     lightboxImg.alt = card.dataset.title;
+
+    lightbox.classList.remove('show-two', 'show-three');
 
     if (secondImg) {
       lightboxImg2.src = secondImg;
@@ -22,7 +26,17 @@ document.querySelectorAll('.gallery-card').forEach(card => {
       lightboxImg2.src = '';
       lightboxImg2.alt = '';
       lightboxImg2.hidden = true;
-      lightbox.classList.remove('show-two');
+    }
+
+    if (thirdImg) {
+      lightboxImg3.src = thirdImg;
+      lightboxImg3.alt = `${card.dataset.title} (3)`;
+      lightboxImg3.hidden = false;
+      lightbox.classList.add('show-three');
+    } else {
+      lightboxImg3.src = '';
+      lightboxImg3.alt = '';
+      lightboxImg3.hidden = true;
     }
 
     lightboxTitle.textContent = card.dataset.title;
@@ -35,6 +49,7 @@ document.querySelectorAll('.gallery-card').forEach(card => {
 function closeLightbox() {
   lightbox.classList.remove('open');
   lightbox.classList.remove('show-two');
+  lightbox.classList.remove('show-three');
   document.body.style.overflow = '';
 }
 
